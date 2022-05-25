@@ -1,2 +1,5 @@
 fastapi==0.77.1
 uvicorn==0.17.6
+sqlalchemy==1.4.36
+passlib==1.7.4
+bcrypt==3.2.2
