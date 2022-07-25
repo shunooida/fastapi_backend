@@ -3,3 +3,5 @@ uvicorn==0.17.6
 sqlalchemy==1.4.36
 passlib==1.7.4
 bcrypt==3.2.2
+python-jose==3.3.0
+python-multipart==0.0.5

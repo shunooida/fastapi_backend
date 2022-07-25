@@ -12,9 +12,7 @@ class UserDisplay(BaseModel):
         orm_mode = True
 
 class MessageBase(BaseModel):
-    from_user_id: int
     message: str
-    is_read: bool
 
 class MessageDisplay(BaseModel):
     from_user_id: int
@@ -23,3 +21,8 @@ class MessageDisplay(BaseModel):
     is_read: bool
     class Config():
         orm_mode = True
+
+class UserAuth(BaseModel):
+    id: int
+    username: str
+    email: str
