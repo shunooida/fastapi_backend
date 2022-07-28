@@ -23,6 +23,17 @@ class MessageDisplay(BaseModel):
     class Config():
         orm_mode = True
 
+class FriendBase(BaseModel):
+    username: str
+
+class FriendDisplay(BaseModel):
+    id: int
+    username: str
+    authenticated: bool
+
+    class Config():
+        orm_mode = True
+
 class UserAuth(BaseModel):
     id: int
     username: str
