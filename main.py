@@ -16,10 +16,6 @@ app.include_router(friend.router)
 app.include_router(post.router)
 app.include_router(story.router)
 
-@app.get('/')
-def index():
-    return 'hello my project'
-
 origins = [
     'http://localhost:3000'
 ]

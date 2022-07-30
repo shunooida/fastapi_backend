@@ -44,6 +44,12 @@ class PostDisplay(BaseModel):
     class Config():
         orm_mode = True
 
+class StoryBase(BaseModel):
+    story_path: str
+
+class StoryDisplay(BaseModel):
+    story_path: str
+    user_id: int
 
 class UserAuth(BaseModel):
     id: int
