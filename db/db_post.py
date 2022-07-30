@@ -19,6 +19,14 @@ def create_post(db: Session, current_user: UserAuth, request: PostBase):
     db.refresh(new_post)
     return new_post
 
+def delete_post(post_id: int, db: Session, current_user: UserAuth):
+    delete_post = db.query(DbPost).filter(
+        DbPost.id == post_id
+    ).first()
+    db.delete(delete_post)
+    db.commit()
+    return
+
 def get_follow_user_posts(db: Session, current_user: UserAuth):
     sub_query = db.query(DbFriend).filter(
             and_(

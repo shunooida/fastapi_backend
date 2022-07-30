@@ -27,6 +27,10 @@ def get_my_posts(db: Session=Depends(get_db), current_user: UserAuth=Depends(get
 def get_follow_user_posts(db: Session=Depends(get_db), current_user: UserAuth=Depends(get_current_user)):
     return db_post.get_follow_user_posts(db, current_user)
 
+@router.post('/delete/{post_id}')
+def delete_post(post_id: int, db: Session=Depends(get_db), current_user: UserAuth=Depends(get_current_user)):
+    return db_post.delete_post(post_id, db, current_user)
+
 @router.post('/image')
 def add_image(image: UploadFile=File(...)):
     letters = string.ascii_letters

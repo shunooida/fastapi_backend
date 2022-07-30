@@ -14,6 +14,15 @@ def create_friend(db: Session, to_user_id, current_user: UserAuth):
     db.refresh(new_friend)
     return
 
+def delete_friend(db: Session, user_id, current_user: UserAuth):
+    delete_friend = db.query(DbFriend).filter(
+        DbFriend.from_user_id == current_user.id,
+        DbFriend.to_user_id == user_id
+    ).first()
+    db.delete(delete_friend)
+    db.commit()
+    return
+
 def get_my_friends(db: Session, current_user: UserAuth):
     return db.query(DbUser).join(
         DbFriend,
