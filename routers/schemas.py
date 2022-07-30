@@ -30,9 +30,20 @@ class FriendDisplay(BaseModel):
     id: int
     username: str
     authenticated: bool
-
     class Config():
         orm_mode = True
+
+class PostBase(BaseModel):
+    image_path: str
+    caption: str
+
+class PostDisplay(BaseModel):
+    id: int
+    image_path: str
+    caption: str
+    class Config():
+        orm_mode = True
+
 
 class UserAuth(BaseModel):
     id: int
